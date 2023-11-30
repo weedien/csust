@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/basic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/hello-servlet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/hello-servlet/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/visit-counter-pro/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/visit-counter-pro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/visit-counter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/visit-counter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/visit-counter1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/web/visit-counter1/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
