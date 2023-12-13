@@ -14,6 +14,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+/**
+ * 处理和订单相关的请求
+ *
+ * @author weedien
+ * @date 2023/12/10
+ */
 @WebServlet(name = "OrderServlet", urlPatterns = "/orderServlet")
 public class OrderServlet extends BaseServlet {
     OrderService orderService = new OrderServiceImpl();

@@ -10,12 +10,6 @@
     <name>core</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.28</version>
-        </dependency>
-
         <!-- 引入Spring依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>

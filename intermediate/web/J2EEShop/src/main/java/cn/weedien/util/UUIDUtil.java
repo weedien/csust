@@ -3,7 +3,10 @@ package cn.weedien.util;
 import java.util.UUID;
 
 /**
- * Created by 13718 on 2017/8/29.
+ * UUID工具类
+ *
+ * @author weedien
+ * @date 2023/12/10
  */
 public class UUIDUtil {
 

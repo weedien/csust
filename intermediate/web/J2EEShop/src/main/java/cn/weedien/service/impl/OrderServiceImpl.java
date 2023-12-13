@@ -42,7 +42,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void insert(Order order) throws SQLException {
-        // 如果直接调用getConnection方法，会报aotoCommit异常，换用开启事务方法，禁止aotoCommit
+        // 如果直接调用getConnection方法，会报autoCommit异常，换用开启事务方法，禁止autoCommit
         Connection connection = DbUtil.startTransaction();
         orderDao.insert(connection, order);
         for (OrderItem orderItem : order.getOrderItems()) {

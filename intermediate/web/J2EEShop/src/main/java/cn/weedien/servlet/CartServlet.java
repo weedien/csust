@@ -15,6 +15,9 @@ import java.sql.SQLException;
 
 /**
  * 处理和购物车相关的请求
+ *
+ * @author weedien
+ * @date 2023/12/10
  */
 @WebServlet(name = "CartServlet", urlPatterns = "/cartServlet")
 public class CartServlet extends BaseServlet {

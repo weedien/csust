@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * 将购物车商品添加到订单之前的过滤器
+ *
  * @author weedien
  * @date 2023/12/10
  */

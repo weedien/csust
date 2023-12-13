@@ -3,6 +3,12 @@ package cn.weedien.util;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * MD5加密工具类
+ *
+ * @author weedien
+ * @date 2023/12/10
+ */
 public class Md5Util {
     /**
      * 使用md5的算法进行加密

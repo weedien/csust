@@ -14,21 +14,21 @@ import java.util.List;
  */
 public interface ProductService {
 
-    Product findById(String pid) throws SQLException;
-
     int insert(Product product) throws SQLException;
 
     int delete(String pid) throws SQLException;
 
-    PageBean<Product> list(int pageNumber, int pageSize) throws SQLException;
-
-    PageBean<Product> listByCid(String cid, int pageNumber, int pageSize) throws SQLException;
-
-    PageBean<Product> listByWord(String word, int pageNumber, int pageSize) throws SQLException;
+    Product findById(String pid) throws SQLException;
 
     List<Product> listByword(String word) throws SQLException;
 
     List<Product> listByHot() throws SQLException;
 
     List<Product> listByNew() throws SQLException;
+
+    PageBean<Product> list(int pageNumber, int pageSize) throws SQLException;
+
+    PageBean<Product> listByCid(String cid, int pageNumber, int pageSize) throws SQLException;
+
+    PageBean<Product> listByWord(String word, int pageNumber, int pageSize) throws SQLException;
 }

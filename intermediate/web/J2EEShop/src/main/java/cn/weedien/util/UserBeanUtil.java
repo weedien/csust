@@ -12,7 +12,12 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * Created by 13718 on 2017/8/29.
+ * 用户Bean工具类
+ * <p>
+ * 将数据封装到User对象中
+ *
+ * @author weedien
+ * @date 2023/12/10
  */
 public class UserBeanUtil {
     public static void populate(User user, Map<String, String[]> parameterMap) throws InvocationTargetException, IllegalAccessException {
@@ -20,7 +25,7 @@ public class UserBeanUtil {
         ConvertUtils.register(new Converter() {
             @Override
             public Object convert(Class aClass, Object value) {
-                SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-DD");
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                 Date parse = null;
                 try {
                     parse = format.parse(value.toString());
@@ -30,6 +35,7 @@ public class UserBeanUtil {
                 return parse;
             }
         }, Date.class);
+
         BeanUtils.populate(user, parameterMap);
     }
 }

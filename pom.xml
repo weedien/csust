@@ -13,6 +13,14 @@
         <module>intermediate/core</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -25,4 +33,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

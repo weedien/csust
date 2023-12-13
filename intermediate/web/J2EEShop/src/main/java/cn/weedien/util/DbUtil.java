@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
+ * 数据库连接工具类
+ *
  * @author weedien
  * @date 2023/12/10
  */
@@ -31,6 +33,7 @@ public class DbUtil {
             dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
             System.out.println("初始化连接池失败");
+            e.printStackTrace();
         }
     }
 

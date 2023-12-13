@@ -3,7 +3,10 @@ package cn.weedien.util;
 import javax.servlet.http.Cookie;
 
 /**
- * Created by 13718 on 2017/8/31.
+ * Cookie 工具类
+ *
+ * @author weedien
+ * @date 2023/12/10
  */
 public class CookieUtil {
     public static Cookie findCookie(Cookie[] allCookie, String cookieName) {

@@ -27,6 +27,9 @@ import java.sql.SQLException;
  *     <li>AJAX异步校验验证码</li>
  *     <li>验证激活码</li>
  * </ol>
+ *
+ * @author weedien
+ * @date 2023/12/10
  */
 @WebServlet(name = "UserServlet", urlPatterns = "/userServlet")
 public class UserServlet extends BaseServlet {

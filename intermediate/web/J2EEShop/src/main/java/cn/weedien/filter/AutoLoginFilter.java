@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 /**
- * 用户登录过滤器
+ * 自动登录过滤器
  *
  * @author weedien
  * @date 2023/12/10
