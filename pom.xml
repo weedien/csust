@@ -11,6 +11,8 @@
         <module>intermediate</module>
         <module>intermediate/web</module>
         <module>intermediate/core</module>
+        <module>intermediate/uniapp</module>
+        <module>advanced</module>
     </modules>
 
     <dependencies>

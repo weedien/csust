@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/advanced/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/basic/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/intermediate/core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/intermediate/core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/uniapp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/uniapp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intermediate/uniapp/web-access/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/intermediate/web/J2EEShop/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/intermediate/web/J2EEShop/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/intermediate/web/guess-number/src/main/java" charset="UTF-8" />
