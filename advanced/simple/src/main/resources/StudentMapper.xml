@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.weedien.csust.advanced.T8_mybatis.StudentMapper">
+    <!-- 定义映射 -->
+    <resultMap id="studentResultMap" type="cn.weedien.csust.advanced.T8_mybatis.StudentDO">
+        <id property="sid" column="sid" />
+        <result property="sname" column="sname" />
+        <result property="score" column="score" />
+    </resultMap>
+
+    <!-- 查询所有学生 -->
+    <select id="findAllStudents" resultMap="studentResultMap">
+        SELECT sid, sname, score
+        FROM student
+    </select>
+
+    <!-- 根据学号查询学生 -->
+    <select id="findStudentBySid" parameterType="int" resultMap="studentResultMap">
+        SELECT sid, sname, score
+        FROM student
+        WHERE sid = #{sid}
+    </select>
+
+    <!-- 插入学生记录 -->
+    <insert id="insertStudent" parameterType="cn.weedien.csust.advanced.T8_mybatis.StudentDO">
+        INSERT INTO student (sid, sname, score)
+        VALUES (#{sid}, #{sname}, #{score})
+    </insert>
+
+    <!-- 更新学生记录 -->
+    <update id="updateStudent" parameterType="cn.weedien.csust.advanced.T8_mybatis.StudentDO">
+        UPDATE student
+        SET sname = #{sname}, score = #{score}
+        WHERE sid = #{sid}
+    </update>
+
+    <!-- 删除学生记录 -->
+    <delete id="deleteStudent" parameterType="int">
+        DELETE FROM student
+        WHERE sid = #{sid}
+    </delete>
+</mapper>

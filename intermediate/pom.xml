@@ -14,5 +14,6 @@
     <modules>
         <module>core</module>
         <module>web</module>
+        <module>uniapp</module>
     </modules>
 </project>

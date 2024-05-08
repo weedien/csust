@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://remote:3306/mybatis_demo
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: weedien
+    password: 031209
+mybatis:
+  #  使用@Select注解后就不需要再配置mapper-locations了，否则会冲突
+  #  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/config/mybatis-config.xml

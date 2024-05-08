@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Role.hbm.xml -->
+<hibernate-mapping>
+    <class name="cn.weedien.csust.advanced.T7_hibernate_query.UserRole" table="user_role">
+        <id name="id" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="name" column="name" not-null="true"/>
+        <set name="groups" table="group_role">
+            <key column="role_id"/>
+            <many-to-many column="group_id" class="cn.weedien.csust.advanced.T7_hibernate_query.UserGroup"/>
+        </set>
+    </class>
+</hibernate-mapping>

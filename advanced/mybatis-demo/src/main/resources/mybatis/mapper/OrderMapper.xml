@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.weedien.csust.dao.OrderMapper">
+    <resultMap id="orderMap" type="cn.weedien.csust.po.Order">
+        <id property="oid" column="oid"/>
+        <result property="uid" column="uid"/>
+        <result property="orderName" column="order_name"/>
+        <result property="orderTime" column="order_time"/>
+    </resultMap>
+
+    <sql id="orderColumns">
+        oid, uid, order_name, order_time
+    </sql>
+
+    <select id="getByUserId" parameterType="string" resultMap="orderMap">
+        SELECT
+        <include refid="orderColumns"/>
+        FROM orders
+        WHERE uid = #{uid}
+    </select>
+
+    <select id="getById" parameterType="string" resultMap="orderMap">
+        SELECT
+        <include refid="orderColumns"/>
+        FROM orders
+        WHERE oid = #{oid}
+    </select>
+
+</mapper>

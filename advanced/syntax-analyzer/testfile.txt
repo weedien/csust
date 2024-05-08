@@ -1,0 +1,14 @@
+int change1;
+int gets1(int var1, int var2) {
+    change1 = var1 + var2;
+    return change1;
+}
+
+void gets2(int var1, int var2) {
+    var1 = var1 - var2;
+}
+
+void main() {
+    printf(gets1(10, 20));
+    printf(gets2(20, 30));
+}
