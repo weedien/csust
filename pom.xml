@@ -11,6 +11,7 @@
         <module>basic</module>
         <module>intermediate</module>
         <module>advanced</module>
+        <module>advanced/compiler-theory</module>
     </modules>
 
 

@@ -12,7 +12,7 @@
 		<module>mybatis-demo</module>
 		<module>simple-aop</module>
 		<module>springmvc-demo</module>
-		<module>simple</module>
+		<module>simple-case</module>
 	</modules>
 
 </project>

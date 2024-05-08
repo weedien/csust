@@ -40,5 +40,9 @@ build/
 ### Custom ###
 **/.idea
 **/target
+**/logs
+**/log
+**/build
+**/out
 *.log
 *.zip

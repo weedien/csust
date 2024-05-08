@@ -1,4 +1,4 @@
-package firstvt;
+package cn.weedien.csust.compiler.firstvt;
 
 import java.io.BufferedReader;
 import java.io.IOException;

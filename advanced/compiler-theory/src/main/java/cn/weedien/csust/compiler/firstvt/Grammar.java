@@ -1,4 +1,4 @@
-package firstvt;
+package cn.weedien.csust.compiler.firstvt;
 
 public class Grammar {
     public String left;// 产生式左部
