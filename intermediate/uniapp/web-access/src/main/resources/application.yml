@@ -4,7 +4,7 @@ spring:
     # 数据库驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 数据库连接url
-    url: jdbc:mysql://193.112.178.249:3306/acmbak
+    url: jdbc:mysql://remote:3306/acmbak
     # 数据库用户名
     username: weedien
     # 数据库密码

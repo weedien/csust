@@ -1,6 +1,5 @@
 package cn.weedien.csust.advanced.T6_hibernate;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

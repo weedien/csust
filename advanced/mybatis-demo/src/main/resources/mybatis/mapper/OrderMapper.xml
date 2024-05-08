@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.weedien.csust.dao.OrderMapper">
-    <resultMap id="orderMap" type="cn.weedien.csust.po.Order">
+    <resultMap id="orderMap" type="cn.weedien.csust.advanced.po.Order">
         <id property="oid" column="oid"/>
         <result property="uid" column="uid"/>
         <result property="orderName" column="order_name"/>

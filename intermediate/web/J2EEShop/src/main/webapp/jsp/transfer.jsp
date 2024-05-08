@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-
+	
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css"/>
 		<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
 		<title>转账页面</title>
-
+	
 	</head>
 	<body>
 		<br/>
@@ -15,7 +15,7 @@
 		<br/>
 		<br/>
 		<br/>
-
+		
 		<div class="container">
 			<form action="${pageContext.request.contextPath}/orderServlet?method=transfer" method="post">
 				<div class="form-group">
@@ -33,7 +33,7 @@
 				<button type="submit" class="btn btn-default">转账</button>
 			</form>
 		</div>
-
-
+	
+	
 	</body>
 </html>

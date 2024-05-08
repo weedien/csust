@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.weedien.csust.dao.UserMapper">
 
-    <select id="getUserById" parameterType="string" resultType="cn.weedien.csust.po.User">
+    <select id="getUserById" parameterType="string" resultType="cn.weedien.csust.advanced.po.User">
         SELECT uid, `name`, `password`
         FROM users
         WHERE uid = #{uid}

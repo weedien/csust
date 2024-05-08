@@ -1,0 +1,243 @@
+## 1. 任务要求
+
+理解Spring MVC的基本原理，完成如下任务：
+
+（1）整合Spring与MyBatis框架，加入Spring MVC支持；
+
+（2）设计一个用户注册界面，包含用户名、密码、email、电话等信息；
+
+（3）将界面表单提交至服务器，形成用户User对象；
+
+（4）将User对象持久化至数据库，并返回状态（成功或者失败）至用户界面；
+
+（5）将任务完成思路、代码、配置、程序运行截图、数据库操作界面的查询结果（证明该条记录入库）截图形成一个word文件提交
+
+## 2. 核心代码
+
+- controller配置
+
+```java
+import cn.weedien.csust.mvc.dao.UserMapper;
+import cn.weedien.csust.mvc.po.User;
+import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@Slf4j
+@RestController
+@CrossOrigin("*")
+@RequestMapping("/user")
+public class UserController {
+
+    @Resource
+    private UserMapper userMapper;
+
+    @RequestMapping("/register")
+    public ResponseEntity<Map<String, Object>> create(@RequestBody User user) {
+        log.info("register: {}", user);
+        userMapper.insert(user);
+        return ResponseEntity.ok(Map.of("status", "ok"));
+    }
+
+    @RequestMapping("/list")
+    public ResponseEntity<Map<String, Object>> list() {
+        return ResponseEntity.ok(Map.of("data", userMapper.list()));
+    }
+
+    @RequestMapping("/getUserInfo")
+    public ResponseEntity<Map<String, Object>> get(String username) {
+        return ResponseEntity.ok(Map.of("data", userMapper.selectOne(username)));
+    }
+}
+
+```
+
+- 前端页面
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>用户注册</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .form-container {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .form-group input {
+        width: 95%;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+      }
+      .error {
+        color: red;
+      }
+      button[type='submit'] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>用户注册</h1>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label for="username">用户名:</label>
+          <input type="text" id="username" name="username" required />
+          <span id="usernameError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">密码:</label>
+          <input type="password" id="password" name="password" required />
+          <span id="passwordError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">电子邮件:</label>
+          <input type="email" id="email" name="email" required />
+          <span id="emailError" class="error"></span>
+        </div>
+        <div class="form-group">
+          <label for="phone">电话:</label>
+          <input type="tel" id="phone" name="phone" required />
+          <span id="phoneError" class="error"></span>
+        </div>
+        <button type="submit">注册</button>
+      </form>
+    </div>
+
+    <script>
+      const form = document.getElementById('registrationForm')
+      const username = document.getElementById('username')
+      const password = document.getElementById('password')
+      const email = document.getElementById('email')
+      const phone = document.getElementById('phone')
+
+      const usernameError = document.getElementById('usernameError')
+      const passwordError = document.getElementById('passwordError')
+      const emailError = document.getElementById('emailError')
+      const phoneError = document.getElementById('phoneError')
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        resetErrors()
+
+        let isValid = true
+
+        if (username.value.trim().length < 3) {
+          usernameError.textContent = '用户名至少需要3个字符'
+          isValid = false
+        }
+
+        if (password.value.trim().length < 6) {
+          passwordError.textContent = '密码至少需要6个字符'
+          isValid = false
+        }
+
+        if (!isValidEmail(email.value.trim())) {
+          emailError.textContent = '请输入有效的电子邮件地址'
+          isValid = false
+        }
+
+        if (!isValidPhoneNumber(phone.value.trim())) {
+          phoneError.textContent = '请输入有效的电话号码'
+          isValid = false
+        }
+
+        if (isValid) {
+          // 如果所有输入都有效,向后端发送 POST 请求
+          const userData = {
+            username: username.value.trim(),
+            password: password.value.trim(),
+            email: email.value.trim(),
+            phone: phone.value.trim()
+          }
+
+          fetch('http://127.0.0.1:8080/user/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+          })
+            .then((response) => {
+              console.log('响应:', response)
+              if (response.ok) {
+                alert('注册成功!')
+                console.log('注册成功!')
+                // 你可以在这里添加其他逻辑,如重定向到另一个页面
+              } else {
+                alert('注册失败,请稍后重试')
+                console.error('注册失败,请稍后重试')
+              }
+            })
+            .catch((error) => {
+              console.error('发生错误:', error)
+            })
+        }
+      })
+
+      function resetErrors() {
+        usernameError.textContent = ''
+        passwordError.textContent = ''
+        emailError.textContent = ''
+        phoneError.textContent = ''
+      }
+
+      function isValidEmail(email) {
+        // 这是一个简单的电子邮件验证正则表达式
+        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+        return emailRegex.test(email)
+      }
+
+      function isValidPhoneNumber(phone) {
+        // 这是一个简单的电话号码验证正则表达式
+        const phoneRegex = /^\d{11}$/
+        return phoneRegex.test(phone)
+      }
+    </script>
+  </body>
+</html>
+
+```
+
+## 3. 运行结果
+
+![image-20240508170556163](https://picgo-1314385327.cos.ap-guangzhou.myqcloud.com/markdown/2024/05/08/20240508170558.png)
+
+![image-20240508170611207](https://picgo-1314385327.cos.ap-guangzhou.myqcloud.com/markdown/2024/05/08/20240508170612.png)
+
+![image-20240508170752335](https://picgo-1314385327.cos.ap-guangzhou.myqcloud.com/markdown/2024/05/08/20240508170754.png)
+

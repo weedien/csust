@@ -31,20 +31,20 @@ public class UserRole {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Set<UserGroup> getGroups() {
-        return groups;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<UserGroup> getGroups() {
+        return groups;
     }
 
     public void setGroups(Set<UserGroup> groups) {

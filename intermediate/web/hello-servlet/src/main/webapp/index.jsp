@@ -1,21 +1,21 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>JSP - Hello World</title>
-</head>
-<body>
-<h1><%= "Hello World!" %>
-</h1>
-<a href="hello-servlet">Hello Servlet</a>
-
-<form action="circle" method="post" style="margin-top: 15px">
-    <label>
-        <input type="text" name="radius" placeholder="请输入圆的半径">
-    </label>
-    <input type="submit" value="计算">
-</form>
-
-<a href="https://github.com/weedien">我是一个超链接</a>
-</body>
+	<head>
+		<title>JSP - Hello World</title>
+	</head>
+	<body>
+		<h1><%= "Hello World!" %>
+		</h1>
+		<a href="hello-servlet">Hello Servlet</a>
+		
+		<form action="circle" method="post" style="margin-top: 15px">
+			<label>
+				<input type="text" name="radius" placeholder="请输入圆的半径">
+			</label>
+			<input type="submit" value="计算">
+		</form>
+		
+		<a href="https://github.com/weedien">我是一个超链接</a>
+	</body>
 </html>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="user" class="cn.weedien.csust.aop.User">
+    <bean id="user" class="cn.weedien.csust.advanced.aop.User">
         <property name="message" value="Hello"/>
     </bean>
 
-    <bean id="logBeforeAdvice" class="cn.weedien.csust.aop.LogBeforeAdvice"/>
+    <bean id="logBeforeAdvice" class="cn.weedien.csust.advanced.aop.LogBeforeAdvice"/>
 
     <aop:config>
         <aop:aspect id="aspectLogger" ref="logBeforeAdvice">
-            <aop:before pointcut="execution(* cn.weedien.csust.aop.Hello.sayHello(..))" method="logBefore"/>
+            <aop:before pointcut="execution(* cn.weedien.csust.advanced.aop.Hello.sayHello(..))" method="logBefore"/>
         </aop:aspect>
     </aop:config>
 

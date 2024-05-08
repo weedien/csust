@@ -36,24 +36,24 @@ public class UserGroup {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<UserRole> getRoles() {
         return userRoles;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
 

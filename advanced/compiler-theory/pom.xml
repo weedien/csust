@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.weedien.csust</groupId>
+    <groupId>cn.weedien.csust.advanced</groupId>
     <artifactId>compiler-theory</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <description>编译原理课程的上机实验，一共有3个，其中两个是使用Java设计的，另一个采用了cpp</description>
 
 </project>

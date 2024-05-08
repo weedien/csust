@@ -15,11 +15,11 @@
         }
 		</style>
 	</head>
-
+	
 	<body>
-
+		
 		<jsp:include page="/jsp/header.jsp"/>
-
+		
 		<div class="container">
 			<div class="row">
 				<div style="margin: 0 auto; margin-top: 10px; width: 950px;">
@@ -39,9 +39,9 @@
 							<c:forEach var="item" items="${order.orderItems}">
 								<tr class="active">
 									<td width="60" width="40%"><input type="hidden" name="id"
-																										value="22"> <img
-											src="${pageContext.request.contextPath}/${item.product.pimage}" width="70"
-											height="60"></td>
+									                                  value="22"> <img
+										src="${pageContext.request.contextPath}/${item.product.pimage}" width="70"
+										height="60"></td>
 									<td width="30%"><a target="_blank">${item.product.pname}</a></td>
 									<td width="20%">￥${item.product.shop_price}</td>
 									<td width="10%">${item.count}</td>
@@ -58,27 +58,27 @@
 			<div>
 				<hr/>
 				<form class="form-horizontal" style="margin-top: 5px; margin-left: 150px;" id="orderForm"
-							action="${pageContext.request.contextPath}/orderServlet?method=orderPay&money=${order.total}"
-							method="post">
+				      action="${pageContext.request.contextPath}/orderServlet?method=orderPay&money=${order.total}"
+				      method="post">
 					<div class="form-group">
 						<label for="address" class="col-sm-1 control-label">地址</label>
 						<div class="col-sm-5">
 							<input type="text" class="form-control" id="address" name="address"
-										 placeholder="请输入收货地址">
+							       placeholder="请输入收货地址">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="name" class="col-sm-1 control-label">收货人</label>
 						<div class="col-sm-5">
 							<input class="form-control" id="name" name="name"
-										 placeholder="请输收货人">
+							       placeholder="请输收货人">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="telephone" class="col-sm-1 control-label">电话</label>
 						<div class="col-sm-5">
 							<input class="form-control" id="telephone" name="telephone"
-										 placeholder="请输入联系方式">
+							       placeholder="请输入联系方式">
 						</div>
 					</div>
 					<hr/>
@@ -109,7 +109,7 @@
 						<p style="text-align: right; margin-right: 100px;">
 							<a href="javascript:document.getElementById('orderForm').submit();">
 								<img src="${pageContext.request.contextPath}/images/finalbutton.gif" width="204"
-										 height="51"/>
+								     height="51"/>
 							</a>
 						</p>
 						<hr/>
@@ -117,7 +117,7 @@
 				</form>
 			</div>
 		</div>
-
+		
 		<jsp:include page="footer.jsp"/>
 	</body>
 

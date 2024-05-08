@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ConfigParser {
 
@@ -13,11 +12,17 @@ public class ConfigParser {
 
     private String primaryKey;
 
-    private List<String> columns;
+    private final List<String> columns;
 
     public ConfigParser(String configPath) {
         columns = new ArrayList<>();
         parseConfigFile(configPath);
+    }
+
+    public static void main(String[] args) {
+        ConfigParser config = new ConfigParser("Student.properties");
+        System.out.println(config);
+        System.out.println(config.generateQuery("id"));
     }
 
     private void parseConfigFile(String configFilePath) {
@@ -43,7 +48,7 @@ public class ConfigParser {
     }
 
     public String generateQuery(String column) {
-        String base = "select " + primaryKey + ", " +String.join(", ", columns) + " from " + tableName + " where ";
+        String base = "select " + primaryKey + ", " + String.join(", ", columns) + " from " + tableName + " where ";
         if (column.equals(primaryKey)) {
             return base + primaryKey + " = ?";
         }
@@ -53,11 +58,5 @@ public class ConfigParser {
         } else {
             throw new IllegalArgumentException("Column not found");
         }
-    }
-
-    public static void main(String[] args) {
-        ConfigParser config = new ConfigParser("Student.properties");
-        System.out.println(config);
-        System.out.println(config.generateQuery("id"));
     }
 }

@@ -1,11 +1,11 @@
 package cn.weedien.csust;
 
-import cn.weedien.csust.dao.OrderMapper;
-import cn.weedien.csust.dao.RoleMapper;
-import cn.weedien.csust.dao.UserMapper;
-import cn.weedien.csust.dao.UserRoleMapper;
-import cn.weedien.csust.po.Order;
-import cn.weedien.csust.po.User;
+import cn.weedien.csust.advanced.dao.OrderMapper;
+import cn.weedien.csust.advanced.dao.RoleMapper;
+import cn.weedien.csust.advanced.dao.UserMapper;
+import cn.weedien.csust.advanced.dao.UserRoleMapper;
+import cn.weedien.csust.advanced.po.Order;
+import cn.weedien.csust.advanced.po.User;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

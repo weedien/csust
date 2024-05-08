@@ -9,13 +9,13 @@
 		<script src="${pageContext.request.contextPath}/js/jquery-1.11.3.min.js" type="text/javascript"></script>
 		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
 	</head>
-
+	
 	<body>
 		<div class="container-fluid">
 			<jsp:include page="header.jsp"/>
 		</div>
 		<span>${el}</span>
-
+		
 		<!-- 轮播图 -->
 		<div class="container-fluid">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="margin: 0 15px;">
@@ -51,7 +51,7 @@
 				</a>
 			</div>
 		</div>
-
+		
 		<div class="container-fluid m-15" style="padding: 10px 0;">
 			<div class="col-md-12 bg-info">
 				<h3>热门商品&nbsp;&nbsp;<small>为您推荐</small></h3>
@@ -61,18 +61,18 @@
 					<div class="col-md-2" style="text-align:center;height: 200px;padding: 10px 0;">
 						<a href="${pageContext.request.contextPath}/productServlet?method=productInfo&pid=${item.pid}">
 							<img src="${pageContext.request.contextPath}/${item.pimage}" width="130" height="130"
-									 style="display: inline-block;">
+							     style="display: inline-block;">
 						</a>
 						<p>
 							<a href="${pageContext.request.contextPath}/productServlet?method=productInfo&pid=${item.pid}"
-								 style='color:#666'>${item.pname}</a></p>
+							   style='color:#666'>${item.pname}</a></p>
 						<p><span style="font-size: 16px color: #8E8E8E; ">&yen;${item.shop_price}</span></p>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
-
+		
 		<jsp:include page="footer.jsp"/>
-
+	
 	</body>
 </html>

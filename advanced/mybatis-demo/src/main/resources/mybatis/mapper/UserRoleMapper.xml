@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.weedien.csust.dao.UserRoleMapper">
-    <resultMap id="userRoleMap" type="cn.weedien.csust.po.UserRole">
+    <resultMap id="userRoleMap" type="cn.weedien.csust.advanced.po.UserRole">
         <id property="urid" column="urid"/>
         <result property="uid" column="uid"/>
         <result property="rid" column="rid"/>

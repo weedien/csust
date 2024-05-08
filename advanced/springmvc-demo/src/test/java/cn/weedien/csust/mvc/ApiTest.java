@@ -1,7 +1,7 @@
 package cn.weedien.csust.mvc;
 
-import cn.weedien.csust.mvc.dao.UserMapper;
-import cn.weedien.csust.mvc.po.User;
+import cn.weedien.csust.advanced.mvc.dao.UserMapper;
+import cn.weedien.csust.advanced.mvc.po.User;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;

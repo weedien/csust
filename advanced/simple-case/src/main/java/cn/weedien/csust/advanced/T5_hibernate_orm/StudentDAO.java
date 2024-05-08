@@ -12,6 +12,33 @@ import java.util.List;
  */
 public class StudentDAO {
 
+    public static void main(String[] args) {
+        StudentDAO studentDAO = new StudentDAO();
+
+        // 创建学生
+        StudentDO student = new StudentDO("张妙妙", 20);
+        studentDAO.createStudent(student);
+
+        // 查询所有学生
+        List<StudentDO> students = studentDAO.listStudents();
+        students.forEach(System.out::println);
+
+        // 更新学生信息
+        student.setAge(21);
+        studentDAO.updateStudent(student);
+
+        // 查询所有学生
+        students = studentDAO.listStudents();
+        students.forEach(System.out::println);
+
+        // 删除学生
+        studentDAO.deleteStudent(student);
+
+        // 查询所有学生
+        students = studentDAO.listStudents();
+        students.forEach(System.out::println);
+    }
+
     /**
      * 创建一个学生
      *
@@ -76,32 +103,5 @@ public class StudentDAO {
 
         session.close();
         return students;
-    }
-
-    public static void main(String[] args) {
-        StudentDAO studentDAO = new StudentDAO();
-
-        // 创建学生
-        StudentDO student = new StudentDO("张妙妙", 20);
-        studentDAO.createStudent(student);
-
-        // 查询所有学生
-        List<StudentDO> students = studentDAO.listStudents();
-        students.forEach(System.out::println);
-
-        // 更新学生信息
-        student.setAge(21);
-        studentDAO.updateStudent(student);
-
-        // 查询所有学生
-        students = studentDAO.listStudents();
-        students.forEach(System.out::println);
-
-        // 删除学生
-        studentDAO.deleteStudent(student);
-
-        // 查询所有学生
-        students = studentDAO.listStudents();
-        students.forEach(System.out::println);
     }
 }
